@@ -1,12 +1,5 @@
-// next.config.jms
-/*import baseConfig from './next.config'; // Asegúrate de que el nombre sea correcto
 
-const jmsConfig = {
-  ...baseConfig,
-  // Otros ajustes específicos de jms, si es necesario
-};
-
-export default jmsConfig;*/
+/* Para que funcione debe estar en una unica carpeta, si hay más que la carpeta de la app next debe indicarse la ruta en './next.config' para que no fallen los deploys; 
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

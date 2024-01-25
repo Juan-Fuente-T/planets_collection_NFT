@@ -1,40 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## NFT Planets Collection
 
-## Getting Started
+# Description
+This application is a collection of non-fungible tokens (NFTs), based on the collection of planets created by NASA, on the Mumbai testnet. 
 
-First, run the development server:
+The NFTs displayed in this application come from a small collection of NFTs, created from images and hosted on the Polygon blockchain.
 
-```bash
+# Application Features
+Allows minting a collection of NFTs, which are displayed as they are issued. 
+
+Provides information about each NFT, including a name and a brief description. 
+
+Allows users to explore and enjoy a collection of NFTs with fantastic images of the Solar System created by NASA.
+
+## Built with:
+- React
+- Next.js
+- Javascript
+- Web3Modal
+- Ethers.js
+
+## Using the Application
+To interact with this application, follow these steps:
+
+- Installation: 
+Clone this repository and set up the development environment.
+- In the terminal:
+git clone https://github.com/Juan-Fuente-T/planets_collection_NFT
+cd planets_collection_NFT
+npm install
+- Deployment: Once you have set up the development environment and are satisfied with the application, you can deploy it on your chosen server or platform. Ensure that users can easily access the collection of NFTs.
+- Or run it locally with:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contribution and Support
+This project is open source, so you can contribute, make improvements and customize it as needed. If you have questions or need assistance, don't hesitate to create an issue or ask for help in the repository's issues section.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## I hope you find this application interesting and useful like I do!
