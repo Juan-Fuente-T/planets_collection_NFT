@@ -23,7 +23,7 @@ export default function Home() {
    */
   const publicMint = async () => {
     try {
-      console.log("Public mint");
+      //console.log("Public mint");
       // We need a Signer here since this is a 'write' transaction.
       const signer = await getProviderOrSigner(true);
       // Create a new instance of the Contract with a Signer, which allows
@@ -183,11 +183,11 @@ export default function Home() {
     const provider = await web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
 
-    // If user is not connected to the Mumbai network, let them know and throw an error
+    // If user is not connected to the Sepolia network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
-    if (chainId !== 80001) {
-      window.alert("Change the network to Mumbai");
-      throw new Error("Change network to Mumbai");
+    if (chainId !== 11155111) {
+      window.alert("Change the network to Sepolia");
+      throw new Error("Change network to Sepolia");
     }
 
     if (needSigner) {
@@ -208,7 +208,7 @@ export default function Home() {
       // Assign the Web3Modal class to the reference object by setting it's `current` value
       // The `current` value is persisted throughout as long as this page is open
       web3ModalRef.current = new Web3Modal({
-        network: "mumbai",
+        network: "sepolia",
         providerOptions: {},
         disableInjectedProvider: false,
       });
@@ -298,7 +298,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.description2}>
-          Mint an NFT in Mumbai and be surprised with a <br />magnificent image of our solar system created by NASA
+          Mint an NFT in Sepolia and be surprised with a <br />magnificent image of our solar system created by NASA
         </div>
         <div className={styles.nft_container} >
           {tokenMetadatas && Object.entries(tokenMetadatas).map(([tokenId, metadata], index) => (

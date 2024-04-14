@@ -1,29 +1,31 @@
-const hre = require("hardhat");
-require("dotenv").config({ path: ".env" });
+require("hardhat");
+require('dotenv').config({ path: '.env' });
+const contractData = require("../contractData.js");
+const bytecode = contractData.bytecode;
+const abi = contractData.abi;
+const { ethers } = require("ethers");
+
+//este script NO ESTÁ FUNCIONANDO CORRECTAMENTE 
 
 async function main() {
-    // URL from where we can extract the metadata for a LW3Punks
+
+    // URL from where we can extract the metadata for the Planets Collection NFTs
     //const metadataURL = "https://ipfs.io/ipfs/QmVs1X2Mda8Lwh7372mxedtnqvhndXE3J2ncVC5eohtDnn/"; ERRONEA
     const metadataURL = "https://ipfs.io/ipfs/QmZ5aAZvEeaxX69e2idwuonYjzVNPVv8Rd7vfGJdK1c2kc/";
-    /*
-    DeployContract in ethers.js is an abstraction used to deploy new smart contracts,
-    so lw3PunksContract here is a factory for instances of our LW3Punks contract.
-    */
-    // here we deploy the contract
-    const planetsContract = await hre.ethers.deployContract("PlanetsCollection", [
-        metadataURL
-    ]);
+  
+    const provider = new ethers.providers.JsonRpcProvider(process.env.ALCHEMY_RPC_URL);
+    
+    const privateKey = process.env.PRIVATE_KEY;
+    
+    const wallet = new ethers.Wallet(privateKey, provider);
 
-    await planetsContract.waitForDeployment();
+    const contractFactory = new ethers.ContractFactory(abi, bytecode, wallet);
 
-    // print the address of the deployed contract
-    console.log("PlanetsCollection Contract Address:", planetsContract.target);
+    const contract = await contractFactory.deploy(metadataURL);
+
+    await contract.deployed();
+
+    console.log("Contrato desplegado en la dirección:", contract.address);
 }
 
-// Call the main function and catch if there is any error
-main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+main().catch(console.error);
