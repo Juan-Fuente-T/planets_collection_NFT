@@ -1,5 +1,8 @@
 ## NFT Planets Collection
 
+![App_para_minteo_NFTs_del_sistema_solar_por_Juan_Fuente - copia](https://github.com/Juan-Fuente-T/planets_collection_NFT/assets/127140423/b1756961-01de-4048-9773-a520834973ea)
+
+
 # Description
 
 This application is a collection of non-fungible tokens (NFTs), based on the collection of planets created by NASA, on the Sepolia testnet.
